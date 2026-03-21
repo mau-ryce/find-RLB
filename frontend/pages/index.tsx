@@ -18,7 +18,7 @@ export default function Home() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-600 to-purple-700 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-primary-900 to-primary-700 flex items-center justify-center">
         <div className="text-white text-2xl">Loading...</div>
       </div>
     );
@@ -36,164 +36,205 @@ export default function Home() {
   const getRoleColor = (role: string) => {
     switch (role) {
       case 'tenant':
-        return 'from-blue-500 to-cyan-500';
+        return 'from-primary-500 to-primary-300';
       case 'landlord':
-        return 'from-purple-500 to-pink-500';
+        return 'from-secondary-500 to-secondary-700';
       case 'service_provider':
-        return 'from-green-500 to-emerald-500';
+        return 'from-accent-500 to-accent-700';
       default:
-        return 'from-gray-500 to-gray-600';
+        return 'from-accent-700 to-accent-500';
     }
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#e6e2d3] via-[#b3c6e7] to-[#23272b] p-0">
-      {/* Hero Section */}
-      <section className="w-full bg-gradient-to-br from-[#23272b] via-[#5bc0eb] to-[#e6e2d3] py-20 px-4 flex flex-col items-center justify-center text-center shadow-lg">
-        <h1 className="text-6xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-[#f7ca18] via-[#5bc0eb] to-[#b3c6e7] bg-clip-text text-transparent drop-shadow-lg">FIND-RLB</h1>
-        <p className="text-2xl text-[#e6e2d3] mb-6 font-medium">AI-Powered Real Estate Autonomous Economy on Hedera</p>
-        <div className="flex flex-wrap gap-4 justify-center mb-8">
-          <Link href="/tenant/search" className="px-8 py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-[#f7ca18] via-[#5bc0eb] to-[#23272b] text-white shadow-xl hover:from-[#b3c6e7] hover:to-[#5bc0eb] transition border-2 border-[#e6e2d3]">Find a Home</Link>
-          <Link href="/landlord/listings" className="px-8 py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-[#23272b] via-[#b3c6e7] to-[#5bc0eb] text-white shadow-xl hover:from-[#f7ca18] hover:to-[#23272b] transition border-2 border-[#b3c6e7]">List Your Property</Link>
+    <main className="min-h-screen bg-gradient-to-br from-primary-900 via-primary-700 to-accent-700">
+      {/* Hero Section - UEFA Inspired */}
+      <section className="w-full bg-gradient-to-b from-primary-900 via-primary-700 to-primary-500/50 py-24 px-4 flex flex-col items-center justify-center text-center">
+        <div className="mb-6 inline-block">
+          <div className="text-7xl font-black tracking-tighter text-white drop-shadow-2xl">FIND-RLB</div>
         </div>
-        <p className="text-[#b3c6e7] text-lg">Transparent. Automated. Intelligent. <span className="font-semibold text-[#f7ca18]">Own your rental journey.</span></p>
+        <p className="text-2xl text-accent-500 mb-4 font-semibold">AI-Powered Real Estate Autonomous Economy</p>
+        <p className="text-accent-300 text-lg max-w-2xl mb-12">Premium platform for rental discovery, property management, and wealth building</p>
+        
+        <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+          <Link href="/tenant/search" className="px-10 py-4 rounded-lg font-bold text-lg bg-gradient-to-r from-secondary-500 to-secondary-700 hover:from-secondary-700 hover:to-secondary-500 text-white shadow-premium transition-all transform hover:scale-105">
+            Find a Home
+          </Link>
+          <Link href="/landlord/listings" className="px-10 py-4 rounded-lg font-bold text-lg bg-gradient-to-r from-accent-500 to-accent-700 hover:from-accent-700 hover:to-accent-500 text-primary-900 shadow-premium transition-all transform hover:scale-105">
+            List Your Property
+          </Link>
+        </div>
+        
+        <p className="text-accent-300 text-lg"><span className="font-semibold text-secondary-400">Transparent.</span> <span className="font-semibold text-accent-300">Automated.</span> <span className="font-semibold text-primary-300">Intelligent.</span></p>
       </section>
 
       {/* Featured Properties Section */}
-      <section className="max-w-6xl mx-auto py-16 px-4">
-        <h2 className="text-4xl font-bold text-[#23272b] mb-8 text-center tracking-tight">Featured Properties</h2>
+      <section className="max-w-6xl mx-auto py-20 px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-2">Featured Properties</h2>
+          <div className="h-1 w-24 bg-gradient-to-r from-secondary-500 to-secondary-700 mx-auto"></div>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Featured Property 1 */}
-          <div className="bg-gradient-to-br from-[#f8fafc] via-[#e6e2d3] to-[#b3c6e7] rounded-2xl shadow-xl p-6 border border-[#e6e2d3] flex flex-col hover:shadow-2xl hover:scale-105 transition duration-300">
-            <div className="rounded-xl mb-4 h-48 w-full bg-gradient-to-br from-[#23272b] to-[#5bc0eb] flex items-center justify-center text-6xl">🏠</div>
-            <h3 className="text-2xl font-bold text-[#23272b] mb-2">Oceanview Apartment</h3>
-            <p className="text-[#5bc0eb] font-semibold mb-2">$1,800/mo · For Rent</p>
-            <p className="text-[#23272b] mb-4">Mombasa, Kenya</p>
-            <Link href="/tenant/search" className="mt-auto px-4 py-2 bg-gradient-to-r from-[#23272b] via-[#5bc0eb] to-[#e6e2d3] text-white rounded-lg font-bold shadow hover:from-[#f7ca18] hover:to-[#5bc0eb] transition text-center">View Details</Link>
+          <div className="bg-gradient-to-br from-accent-50 to-accent-100 rounded-xl shadow-card hover:shadow-premium transition-all duration-300 overflow-hidden group">
+            <div className="h-48 w-full bg-gradient-to-br from-primary-700 to-primary-500 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-300">🏠</div>
+            <div className="p-6">
+              <h3 className="text-2xl font-bold text-primary-900 mb-2">Oceanview Apartment</h3>
+              <p className="text-secondary-600 font-semibold mb-2">$1,800/mo · For Rent</p>
+              <p className="text-accent-700 mb-6 text-sm">Mombasa, Kenya</p>
+              <Link href="/tenant/search" className="block w-full px-4 py-2.5 bg-gradient-to-r from-secondary-500 to-secondary-700 hover:from-secondary-700 hover:to-secondary-500 text-white rounded-lg font-semibold text-center transition-all shadow-card">View Details</Link>
+            </div>
           </div>
           
           {/* Featured Property 2 */}
-          <div className="bg-gradient-to-br from-[#f8fafc] via-[#e6e2d3] to-[#b3c6e7] rounded-2xl shadow-xl p-6 border border-[#e6e2d3] flex flex-col hover:shadow-2xl hover:scale-105 transition duration-300">
-            <div className="rounded-xl mb-4 h-48 w-full bg-gradient-to-br from-[#b3c6e7] to-[#f7ca18] flex items-center justify-center text-6xl">🏰</div>
-            <h3 className="text-2xl font-bold text-[#23272b] mb-2">Luxury Villa</h3>
-            <p className="text-[#f7ca18] font-semibold mb-2">$250,000 · For Sale</p>
-            <p className="text-[#23272b] mb-4">Karen, Nairobi</p>
-            <Link href="/tenant/search" className="mt-auto px-4 py-2 bg-gradient-to-r from-[#23272b] via-[#5bc0eb] to-[#e6e2d3] text-white rounded-lg font-bold shadow hover:from-[#f7ca18] hover:to-[#5bc0eb] transition text-center">View Details</Link>
+          <div className="bg-gradient-to-br from-accent-50 to-accent-100 rounded-xl shadow-card hover:shadow-premium transition-all duration-300 overflow-hidden group">
+            <div className="h-48 w-full bg-gradient-to-br from-primary-500 to-primary-300 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-300">🏰</div>
+            <div className="p-6">
+              <h3 className="text-2xl font-bold text-primary-900 mb-2">Luxury Villa</h3>
+              <p className="text-secondary-600 font-semibold mb-2">$250,000 · For Sale</p>
+              <p className="text-accent-700 mb-6 text-sm">Karen, Nairobi</p>
+              <Link href="/tenant/search" className="block w-full px-4 py-2.5 bg-gradient-to-r from-secondary-500 to-secondary-700 hover:from-secondary-700 hover:to-secondary-500 text-white rounded-lg font-semibold text-center transition-all shadow-card">View Details</Link>
+            </div>
           </div>
           
           {/* Featured Property 3 */}
-          <div className="bg-gradient-to-br from-[#f8fafc] via-[#e6e2d3] to-[#b3c6e7] rounded-2xl shadow-xl p-6 border border-[#e6e2d3] flex flex-col hover:shadow-2xl hover:scale-105 transition duration-300">
-            <div className="rounded-xl mb-4 h-48 w-full bg-gradient-to-br from-[#5bc0eb] to-[#e6e2d3] flex items-center justify-center text-6xl">🏢</div>
-            <h3 className="text-2xl font-bold text-[#23272b] mb-2">Modern Studio</h3>
-            <p className="text-[#5bc0eb] font-semibold mb-2">$900/mo · For Rent</p>
-            <p className="text-[#23272b] mb-4">Westlands, Nairobi</p>
-            <Link href="/tenant/search" className="mt-auto px-4 py-2 bg-gradient-to-r from-[#23272b] via-[#5bc0eb] to-[#e6e2d3] text-white rounded-lg font-bold shadow hover:from-[#f7ca18] hover:to-[#5bc0eb] transition text-center">View Details</Link>
+          <div className="bg-gradient-to-br from-accent-50 to-accent-100 rounded-xl shadow-card hover:shadow-premium transition-all duration-300 overflow-hidden group">
+            <div className="h-48 w-full bg-gradient-to-br from-primary-300 to-accent-300 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-300">🏢</div>
+            <div className="p-6">
+              <h3 className="text-2xl font-bold text-primary-900 mb-2">Modern Studio</h3>
+              <p className="text-secondary-600 font-semibold mb-2">$900/mo · For Rent</p>
+              <p className="text-accent-700 mb-6 text-sm">Westlands, Nairobi</p>
+              <Link href="/tenant/search" className="block w-full px-4 py-2.5 bg-gradient-to-r from-secondary-500 to-secondary-700 hover:from-secondary-700 hover:to-secondary-500 text-white rounded-lg font-semibold text-center transition-all shadow-card">View Details</Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Header (moved below hero for visual hierarchy) */}
-      <div className="max-w-6xl mx-auto mb-12 mt-8">
-        <div className="flex justify-between items-start">
-          <div>
-            <h1 className="text-3xl font-bold text-[#23272b] mb-2">Welcome, {user?.username}</h1>
-            <p className="text-lg text-[#6c7a89]">Your dashboard</p>
-          </div>
-          <div className="text-right">
-            <div className="mb-4">
-              <p className="text-[#6c7a89] text-sm">Logged in as</p>
-              <p className="text-white font-semibold">{user?.first_name} {user?.last_name}</p>
-              <span className={`inline-block px-3 py-1 rounded-full text-sm font-semibold text-white bg-gradient-to-r ${getRoleColor(user?.role || '')} mt-2`}>
-                {user?.role.replace('_', ' ').toUpperCase()}
-              </span>
+      {/* Dashboard Section */}
+      <section className="bg-gradient-to-r from-primary-800 to-primary-700/50 py-20 px-4 mt-12 mb-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
+            <div>
+              <h1 className="text-4xl font-bold text-white mb-2">Welcome, {user?.first_name}</h1>
+              <p className="text-accent-300">Manage your properties and investments</p>
             </div>
-            <div className="flex gap-2">
-              {user?.role === 'admin' && (
-                <Link href="/admin/dashboard" className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition inline-block">
-                  Admin Panel
-                </Link>
-              )}
-              <button
-                onClick={handleLogout}
-                className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-sm font-semibold transition"
-              >
-                Sign Out
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Navigation */}
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Tenant App Card */}
-          <Link href="/tenant">
-            <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-lg shadow-xl p-8 cursor-pointer hover:shadow-2xl hover:scale-105 transition duration-300 text-white h-full">
-              <div className="mb-4 text-5xl">👤</div>
-              <h2 className="text-3xl font-bold mb-2">Tenant App</h2>
-              <p className="text-blue-100 mb-6">Discover properties, manage payments, and track your savings journey.</p>
-              <div className="flex items-center justify-between">
-                <span className="text-sm font-semibold bg-white bg-opacity-20 px-3 py-1 rounded">8 Features</span>
-                <span className="text-2xl">→</span>
+            <div className="text-right">
+              <div className="mb-4">
+                <p className="text-accent-300 text-sm">Account Type</p>
+                <span className={`inline-block px-4 py-2 rounded-lg text-sm font-semibold text-white bg-gradient-to-r ${getRoleColor(user?.role || '')} mt-2`}>
+                  {user?.role.replace('_', ' ').toUpperCase()}
+                </span>
+              </div>
+              <div className="flex gap-2 justify-end">
+                {user?.role === 'admin' && (
+                  <Link href="/admin/dashboard" className="px-5 py-2.5 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-600 text-white rounded-lg text-sm font-semibold transition shadow-card inline-block">
+                    Admin Panel
+                  </Link>
+                )}
+                <button
+                  onClick={handleLogout}
+                  className="px-5 py-2.5 bg-gradient-to-r from-secondary-600 to-secondary-700 hover:from-secondary-700 hover:to-secondary-600 text-white rounded-lg text-sm font-semibold transition shadow-card"
+                >
+                  Sign Out
+                </button>
               </div>
             </div>
-          </Link>
+          </div>
 
-          {/* Landlord Dashboard Card */}
-          <Link href="/landlord">
-            <div className="bg-gradient-to-br from-purple-600 to-pink-500 rounded-lg shadow-xl p-8 cursor-pointer hover:shadow-2xl hover:scale-105 transition duration-300 text-white h-full">
-              <div className="mb-4 text-5xl">🏢</div>
-              <h2 className="text-3xl font-bold mb-2">Landlord Dashboard</h2>
-              <p className="text-purple-100 mb-6">Manage properties, pricing, schedules, and analytics with AI insights.</p>
-              <div className="flex items-center justify-between">
-                <span className="text-sm font-semibold bg-white bg-opacity-20 px-3 py-1 rounded">5 Features</span>
-                <span className="text-2xl">→</span>
+          {/* Main Navigation Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Tenant App Card */}
+            <Link href="/tenant" className="group">
+              <div className="bg-gradient-to-br from-primary-600 to-primary-500 rounded-xl shadow-card hover:shadow-premium transition-all duration-300 p-8 text-white cursor-pointer transform hover:scale-105 h-full">
+                <div className="mb-4 text-6xl group-hover:scale-125 transition-transform duration-300">👤</div>
+                <h2 className="text-3xl font-bold mb-3">Tenant App</h2>
+                <p className="text-primary-100 mb-6 text-sm leading-relaxed">Discover premium properties, manage payments, and build wealth through intelligent savings.</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-semibold bg-white/20 px-3 py-1.5 rounded-full">8 Features</span>
+                  <span className="text-2xl group-hover:translate-x-2 transition-transform">→</span>
+                </div>
               </div>
-            </div>
-          </Link>
+            </Link>
 
-          {/* Service Provider Portal Card */}
-          <Link href="/service">
-            <div className="bg-gradient-to-br from-green-600 to-emerald-500 rounded-lg shadow-xl p-8 cursor-pointer hover:shadow-2xl hover:scale-105 transition duration-300 text-white h-full">
-              <div className="mb-4 text-5xl">🔧</div>
-              <h2 className="text-3xl font-bold mb-2">Service Portal</h2>
-              <p className="text-green-100 mb-6">Browse services, manage bookings, maintenance, and storage inventory.</p>
-              <div className="flex items-center justify-between">
-                <span className="text-sm font-semibold bg-white bg-opacity-20 px-3 py-1 rounded">3 Services</span>
-                <span className="text-2xl">→</span>
+            {/* Landlord Dashboard Card */}
+            <Link href="/landlord" className="group">
+              <div className="bg-gradient-to-br from-secondary-600 to-secondary-500 rounded-xl shadow-card hover:shadow-premium transition-all duration-300 p-8 text-white cursor-pointer transform hover:scale-105 h-full">
+                <div className="mb-4 text-6xl group-hover:scale-125 transition-transform duration-300">🏢</div>
+                <h2 className="text-3xl font-bold mb-3">Landlord Dashboard</h2>
+                <p className="text-secondary-100 mb-6 text-sm leading-relaxed">Manage properties, track analytics, set pricing, and optimize your rental portfolio with AI.</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-semibold bg-white/20 px-3 py-1.5 rounded-full">5 Features</span>
+                  <span className="text-2xl group-hover:translate-x-2 transition-transform">→</span>
+                </div>
               </div>
-            </div>
-          </Link>
-        </div>
+            </Link>
 
-        {/* Features Section */}
-        <div className="mt-16">
-          <h3 className="text-3xl font-bold text-white mb-8">Platform Highlights</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-slate-700 rounded-lg p-6 border border-slate-600">
-              <div className="text-3xl mb-2">🤖</div>
-              <h4 className="font-bold text-white mb-2">AI Agents</h4>
-              <p className="text-gray-400 text-sm">Smart recommendations powered by machine learning</p>
-            </div>
-            <div className="bg-slate-700 rounded-lg p-6 border border-slate-600">
-              <div className="text-3xl mb-2">⛓️</div>
-              <h4 className="font-bold text-white mb-2">On-Chain</h4>
-              <p className="text-gray-400 text-sm">Secure Hedera blockchain transactions</p>
-            </div>
-            <div className="bg-slate-700 rounded-lg p-6 border border-slate-600">
-              <div className="text-3xl mb-2">💰</div>
-              <h4 className="font-bold text-white mb-2">FIND Token</h4>
-              <p className="text-gray-400 text-sm">Native cryptocurrency for platform rewards</p>
-            </div>
-            <div className="bg-slate-700 rounded-lg p-6 border border-slate-600">
-              <div className="text-3xl mb-2">📊</div>
-              <h4 className="font-bold text-white mb-2">Analytics</h4>
-              <p className="text-gray-400 text-sm">Real-time market insights and trends</p>
-            </div>
+            {/* Service Provider Portal Card */}
+            <Link href="/service" className="group">
+              <div className="bg-gradient-to-br from-accent-600 to-accent-500 rounded-xl shadow-card hover:shadow-premium transition-all duration-300 p-8 text-primary-900 cursor-pointer transform hover:scale-105 h-full">
+                <div className="mb-4 text-6xl group-hover:scale-125 transition-transform duration-300">🔧</div>
+                <h2 className="text-3xl font-bold mb-3 text-primary-900">Service Portal</h2>
+                <p className="text-primary-800 mb-6 text-sm leading-relaxed">Browse premium services, manage bookings, coordinate maintenance efficiently.</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-semibold bg-black/10 px-3 py-1.5 rounded-full text-primary-900">3 Services</span>
+                  <span className="text-2xl group-hover:translate-x-2 transition-transform text-primary-900">→</span>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="max-w-6xl mx-auto py-20 px-4">
+        <div className="text-center mb-12">
+          <h3 className="text-4xl font-bold text-white mb-2">Platform Highlights</h3>
+          <div className="h-1 w-24 bg-gradient-to-r from-secondary-500 to-secondary-700 mx-auto"></div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bg-gradient-to-br from-primary-700 to-primary-600 rounded-xl p-6 border border-primary-500/30 hover:border-secondary-500/50 transition-all group">
+            <div className="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">🤖</div>
+            <h4 className="font-bold text-white mb-2 text-lg">AI Agents</h4>
+            <p className="text-primary-200 text-sm leading-relaxed">Smart recommendations powered by advanced machine learning</p>
+          </div>
+          <div className="bg-gradient-to-br from-primary-700 to-primary-600 rounded-xl p-6 border border-primary-500/30 hover:border-secondary-500/50 transition-all group">
+            <div className="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">⛓️</div>
+            <h4 className="font-bold text-white mb-2 text-lg">On-Chain</h4>
+            <p className="text-primary-200 text-sm leading-relaxed">Secure Hedera blockchain transactions and smart contracts</p>
+          </div>
+          <div className="bg-gradient-to-br from-primary-700 to-primary-600 rounded-xl p-6 border border-primary-500/30 hover:border-secondary-500/50 transition-all group">
+            <div className="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">💰</div>
+            <h4 className="font-bold text-white mb-2 text-lg">FIND Token</h4>
+            <p className="text-primary-200 text-sm leading-relaxed">Native cryptocurrency for platform rewards and governance</p>
+          </div>
+          <div className="bg-gradient-to-br from-primary-700 to-primary-600 rounded-xl p-6 border border-primary-500/30 hover:border-secondary-500/50 transition-all group">
+            <div className="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">📊</div>
+            <h4 className="font-bold text-white mb-2 text-lg">Analytics</h4>
+            <p className="text-primary-200 text-sm leading-relaxed">Real-time market insights and comprehensive data analytics</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="max-w-4xl mx-auto py-16 px-4 text-center">
+        <h3 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Real Estate Journey?</h3>
+        <p className="text-accent-300 mb-8 text-lg">Join thousands of users leveraging AI and blockchain for smarter decisions</p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link href="/tenant/search" className="px-10 py-3.5 bg-gradient-to-r from-secondary-500 to-secondary-700 hover:from-secondary-700 hover:to-secondary-500 text-white rounded-lg font-semibold shadow-premium transition-all transform hover:scale-105">
+            Start Searching
+          </Link>
+          <Link href="/landlord" className="px-10 py-3.5 border-2 border-accent-500 text-accent-300 hover:bg-accent-500/10 rounded-lg font-semibold transition-all">
+            Become a Landlord
+          </Link>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-primary-900/80 border-t border-primary-700/50 mt-20 py-8 px-4">
+        <div className="max-w-6xl mx-auto text-center text-accent-400 text-sm">
+          <p> © 2026 FIND-RLB. Premium real estate platform powered by AI and blockchain.</p>
+        </div>
+      </footer>
     </main>
   );
 }

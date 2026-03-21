@@ -1,16 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* REMAX-inspired palette (exact hexes chosen to match REMAX branding) */
-  --remax-blue: #0033A0; /* deep REMAX blue */
-  --remax-red:  #FF2D2D; /* REMAX red */
-  --remax-light:#E9F4FF; /* light blue background accent */
-  --muted-600:  #6b7280;
-  --bg-900:     #0f1724;
+  /* UEFA-Inspired Color Palette */
+  --primary-900: #000a14;     /* Metal Black */
+  --primary-700: #001a3d;     /* Metal Black-Blue */
+  --primary-600: #001f4d;     /* Dark Blue */
+  --primary-500: #003f7f;     /* Deep Blue */
+  --primary-300: #7a98c7;     /* Light Blue */
+  
+  --secondary-700: #7a1f1f;   /* Dark Brick Red */
+  --secondary-600: #8b2626;   /* Medium Brick Red */
+  --secondary-500: #a83030;   /* Brick Red */
+  
+  --accent-700: #808080;      /* Dark Silver */
+  --accent-600: #999999;      /* Medium Silver */
+  --accent-500: #c0c0c0;      /* Silver */
+  --accent-300: #d4d4d4;      /* Light Silver */
+  
+  --muted-600: #a0a9b8;
+  --bg-900: #000a14;
 }
 
 @layer base {
@@ -20,14 +32,14 @@
 
   body {
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    background: linear-gradient(180deg, var(--bg-900) 0%, #0b1220 100%);
+    background: linear-gradient(180deg, #000a14 0%, #001a3d 50%, #003f7f 100%);
     color: #e6eef8;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   a {
-    color: var(--brand-300);
+    color: var(--accent-500);
   }
 
   .container {
@@ -39,14 +51,60 @@
   }
 }
 
+/* Button Styles */
 .btn-primary {
-  @apply inline-flex items-center gap-2 px-4 py-2 rounded-md text-white font-semibold shadow-md;
-  background: linear-gradient(90deg, var(--remax-blue), var(--remax-red));
+  @apply inline-flex items-center gap-2 px-6 py-2.5 rounded-lg text-white font-semibold shadow-lg;
+  background: linear-gradient(135deg, var(--secondary-500) 0%, var(--secondary-700) 100%);
+  transition: all 0.3s ease;
 }
 
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--secondary-700) 0%, var(--secondary-500) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(168, 48, 48, 0.3);
+}
+
+/* Card Styles */
 .card {
-  @apply bg-white/5 rounded-2xl p-6 shadow-lg border border-white/6;
+  @apply bg-gradient-to-br from-accent-50 to-accent-100 rounded-xl p-6 shadow-card border border-accent-200 transition-all duration-300;
 }
 
-.muted { color: var(--muted-600); }
+.card:hover {
+  @apply shadow-premium;
+}
 
+/* Utility Classes */
+.muted { 
+  color: var(--muted-600); 
+}
+
+.gradient-primary {
+  background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-300) 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, var(--secondary-500) 0%, var(--secondary-700) 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, var(--accent-500) 0%, var(--accent-700) 100%);
+}
+
+/* Text Utilities */
+.text-premium {
+  @apply font-bold tracking-tight;
+}
+
+/* Premium effects */
+.shadow-premium {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-all duration-300;
+}

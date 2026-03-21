@@ -51,7 +51,7 @@ urlpatterns = [
     # path('api/service/', include('service.urls')),
     # path('api/contracts/', include('api.urls_contracts')),
     # path('api/token/', include('api.urls_token')),
-    # path('api/ai-agents/', include('api.urls_ai_agents')),
+    path('api/ai-agents/', include('api.urls_ai_agents')),
     # path('api/wallet/', include('api.urls_wallet')),
 ]
 

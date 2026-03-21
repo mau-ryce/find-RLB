@@ -23,8 +23,11 @@ export const ProtectedPage: React.FC<ProtectedPageProps> = ({ requiredRole, chil
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="text-2xl text-gray-700">Loading...</div>
+      <div className="min-h-screen bg-gradient-to-br from-primary-900 to-primary-700 flex items-center justify-center">
+        <div className="flex flex-col items-center gap-4">
+          <div className="text-2xl text-white font-semibold">Loading...</div>
+          <div className="w-12 h-12 border-4 border-secondary-500 border-t-accent-500 rounded-full animate-spin"></div>
+        </div>
       </div>
     );
   }

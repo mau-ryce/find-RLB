@@ -59,7 +59,7 @@ export default function MapView({ properties }: { properties: any[] }){
   }, [properties]);
 
   return (
-    <div className="w-full h-80 rounded-2xl overflow-hidden card">
+    <div className="w-full h-80 rounded-xl overflow-hidden shadow-premium border-2 border-secondary-500/30 bg-gradient-to-br from-primary-700 to-primary-600">
       <div ref={containerRef} style={{ width: '100%', height: '100%' }} />
     </div>
   );
