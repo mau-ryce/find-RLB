@@ -1,7 +1,59 @@
-[00:00:29.838] Server  WARN    ⚠ Turbopack's filesystem cache has been deleted because we previously detected an internal error in Turbopack. Builds or page loads may be slower as a result.
-[00:00:54.279] Server  LOG     ✓ Ready in 47s
-[00:29:53.669] Server  ERROR   ⨯ Error: ENOENT: no such file or directory, open 'C:\Users\USER\Desktop\FIND-RL\FIND_RLB\frontend\.next\dev\server\pages\_app\build-manifest.json'
-[00:29:53.878] Server  ERROR   ⨯ Error: ENOENT: no such file or directory, open 'C:\Users\USER\Desktop\FIND-RL\FIND_RLB\frontend\.next\dev\server\pages\_app\build-manifest.json'
-[00:29:53.962] Server  ERROR   Error: ENOENT: no such file or directory, open 'C:\Users\USER\Desktop\FIND-RL\FIND_RLB\frontend\.next\dev\server\pages\_app\build-manifest.json'
-[00:29:54.042] Server  ERROR   ⨯ Error: ENOENT: no such file or directory, open 'C:\Users\USER\Desktop\FIND-RL\FIND_RLB\frontend\.next\dev\server\pages\_app\build-manifest.json'
-[00:29:54.079] Server  ERROR   Error: ENOENT: no such file or directory, open 'C:\Users\USER\Desktop\FIND-RL\FIND_RLB\frontend\.next\dev\server\pages\_app\build-manifest.json'
+[00:04:16.020] Server  LOG     ✓ Ready in 207.1s
+[00:04:19.120] Server  LOG     ○ Compiling / ...
+[00:04:42.992] Server  WARN    Warning: viewport meta tags should not be used in _document.js's <Head>. https://nextjs.org/docs/messages/no-document-viewport-meta
+[00:07:18.547] Server  LOG     ○ Compiling /tenant/search ...
+[00:09:41.718] Server  LOG     ○ Compiling /service ...
+[00:15:33.314] Server  LOG     ○ Compiling /admin ...
+[00:15:55.559] Server  WARN    Warning: viewport meta tags should not be used in _document.js's <Head>. https://nextjs.org/docs/messages/no-document-viewport-meta
+[00:16:20.006] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <PagesDevOverlayErrorBoundary>
+      <PathnameContextProviderAdapter router={{sdc:{},sbc:{}, ...}} isAutoExport={true}>
+        <App pageProps={{}} Component={function AdminHome} err={undefined} router={{sdc:{},sbc:{}, ...}}>
+          <AdminHome>
+            <div className="min-h-scre...">
+              <nav>
+              <div className="max-w-7xl ...">
+                <div>
+                <div>
+                <div>
+                <div className="mt-12 text...">
+                  <p>
++                   21/03/2026, 15:05:49
+-                   21/03/2026, 15:05:07
+        ...
+
+[00:16:47.368] Server  LOG     ✓ Finished filesystem cache database compaction in 67s
+[00:16:48.429] Server  LOG     ✓ Finished writing to filesystem cache in 37.5s
+[00:17:28.793] Browser ERROR   %o
+
+%s
+
+%s
+ {} The above error occurred in the <AdvancedAnalytics> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:17:40.718] Server  WARN    Warning: viewport meta tags should not be used in _document.js's <Head>. https://nextjs.org/docs/messages/no-document-viewport-meta
+[00:17:41.606] Browser ERROR   %o
+
+%s
+
+%s
+ {} The above error occurred in the <AdvancedAnalytics> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:17:56.047] Server  WARN    Warning: viewport meta tags should not be used in _document.js's <Head>. https://nextjs.org/docs/messages/no-document-viewport-meta
+[00:18:03.857] Server  WARN    Warning: viewport meta tags should not be used in _document.js's <Head>. https://nextjs.org/docs/messages/no-document-viewport-meta
+[00:18:16.826] Browser ERROR   Analytics error: {}
+[00:18:16.826] Browser ERROR   Activities error: {}
+[00:18:16.826] Browser ERROR   System status error: {}
+[00:18:16.826] Browser ERROR   Analytics error: {}
+[00:18:16.826] Browser ERROR   Activities error: {}
+[00:18:16.826] Browser ERROR   System status error: {}

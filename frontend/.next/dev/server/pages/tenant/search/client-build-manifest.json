@@ -1,0 +1,5 @@
+{
+  "/tenant/search": [
+    "static/chunks/pages/tenant/search.js"
+  ]
+}

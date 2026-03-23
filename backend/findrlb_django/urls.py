@@ -43,7 +43,7 @@ urlpatterns = [
     path('api/auth/', include('accounts.urls')),
     path('api/properties/', include('property.urls')),
     path('api/search/', include('api.urls_search')),
-    path('api/recommendations/', include('api.urls_recommendations')),
+    # path('api/recommendations/', include('api.urls_recommendations')),  # Temporarily disabled due to import issues
 
     # Commented out for now - can be enabled as modules are completed
     path('api/tenant/', include('tenant.urls')),

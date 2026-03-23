@@ -1,0 +1,97 @@
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap";
+/* [project]/styles/globals.css [client] (css) */
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+:root {
+  --primary-900: #000a14;
+  --primary-700: #001a3d;
+  --primary-600: #001f4d;
+  --primary-500: #003f7f;
+  --primary-300: #7a98c7;
+  --secondary-700: #7a1f1f;
+  --secondary-600: #8b2626;
+  --secondary-500: #a83030;
+  --accent-700: gray;
+  --accent-600: #999;
+  --accent-500: silver;
+  --accent-300: #d4d4d4;
+  --muted-600: #a0a9b8;
+  --bg-900: #000a14;
+}
+
+@layer base {
+  html, body, #__next {
+    height: 100%;
+  }
+
+  body {
+    color: #e6eef8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(#000a14 0%, #001a3d 50%, #003f7f 100%);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;
+  }
+
+  a {
+    color: var(--accent-500);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@apply inline-flex items-center gap-2 px-6 py-2.5 rounded-lg text-white font-semibold shadow-lg;
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--secondary-500) 0%, var(--secondary-700) 100%);
+  transition: all .3s;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--secondary-700) 0%, var(--secondary-500) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px #a830304d;
+}
+
+@apply bg-gradient-to-br from-accent-50 to-accent-100 rounded-xl p-6 shadow-card border border-accent-200 transition-all duration-300;
+
+@apply shadow-premium;
+
+.muted {
+  color: var(--muted-600);
+}
+
+.gradient-primary {
+  background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-300) 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, var(--secondary-500) 0%, var(--secondary-700) 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, var(--accent-500) 0%, var(--accent-700) 100%);
+}
+
+@apply font-bold tracking-tight;
+
+.shadow-premium {
+  box-shadow: 0 20px 40px #0000004d;
+}
+
+.shadow-card {
+  box-shadow: 0 4px 20px #0000001a;
+}
+
+@apply transition-all duration-300;
+
+/*# sourceMappingURL=styles_globals_dc36e6c9.css.map*/

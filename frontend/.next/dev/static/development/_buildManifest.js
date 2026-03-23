@@ -1,4 +1,25 @@
 self.__BUILD_MANIFEST = {
+  "/": [
+    "static/chunks/pages/index.js"
+  ],
+  "/admin": [
+    "static/chunks/pages/admin.js"
+  ],
+  "/admin/analytics": [
+    "static/chunks/pages/admin/analytics.js"
+  ],
+  "/admin/dashboard": [
+    "static/chunks/pages/admin/dashboard.js"
+  ],
+  "/landlord": [
+    "static/chunks/pages/landlord.js"
+  ],
+  "/service": [
+    "static/chunks/pages/service.js"
+  ],
+  "/tenant/search": [
+    "static/chunks/pages/tenant/search.js"
+  ],
   "__rewrites": {
     "afterFiles": [],
     "beforeFiles": [],
@@ -11,6 +32,7 @@ self.__BUILD_MANIFEST = {
     "/admin",
     "/admin/analytics",
     "/admin/dashboard",
+    "/ai/customer-care",
     "/ai/landlord",
     "/ai/match",
     "/ai/tenant",

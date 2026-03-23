@@ -1,15 +1,15 @@
 from django.urls import path
-from ai_agent_api import (
+from backend.ai_agent_api import (
     TenantAgentView, LandlordAgentView, MatchingEngineView, TopMatchesView,
     AdvancedTenantRecommendationView, GuardianAgentView, MovingServiceAgentView,
     SavingsToOwnAgentView, P2PCommunityAgentView, CustomerCareAgentView, HederaAuthView
 )
-from agent_economy_views import (
+from backend.agent_economy_views import (
     AgentRegistrationView, AgentBalanceView, ServiceOfferView, ServiceExecutionView,
     AgentTransferView, IntentBroadcastView, BidSubmissionView, IntentQueryView,
     BidAcceptanceView, AgentDiscoveryView, NegotiationView
 )
-from ai_governance_views import AIOptimizationViewSet, GovernanceViewSet
+from backend.ai_governance_views import AIOptimizationViewSet, GovernanceViewSet
 
 urlpatterns = [
     # Legacy AI Agents

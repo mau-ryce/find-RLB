@@ -1,1 +1,11 @@
-{}
+{
+  "/": "pages/index.js",
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/admin": "pages/admin.js",
+  "/admin/analytics": "pages/admin/analytics.js",
+  "/admin/dashboard": "pages/admin/dashboard.js",
+  "/landlord": "pages/landlord.js",
+  "/service": "pages/service.js",
+  "/tenant/search": "pages/tenant/search.js"
+}
